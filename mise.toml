@@ -1,0 +1,19 @@
+[tools]
+node = "22"
+typst = "0.15.1"
+
+[tasks.dev]
+description = "Serve the specimen and swap the page when Typst changes"
+run = "test -d site/node_modules || npm install --prefix site; npm run dev --prefix site"
+
+[tasks.html]
+description = "Export one HTML file"
+run = "mkdir -p build && typst compile --features html --format html main.typ build/manual.html"
+
+[tasks.pdf]
+description = "Compile the PDF"
+run = "mkdir -p build && typst compile main.typ build/specimen.pdf"
+
+[tasks.build]
+description = "Build the static site into site/dist"
+run = "test -d site/node_modules || npm install --prefix site; npm run build --prefix site"

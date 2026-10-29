@@ -2,7 +2,7 @@
 
 A galley is the proof you pull while the type is still being set. This is a template for that proof: a Typst document becomes a page you can read in the browser, with the PDF and a single HTML file from the same source.
 
-[Use this template](https://github.com/mate-h/galley/generate) to start a manual. The specimen is deployed at the URL in the repository homepage.
+[Use this template](https://github.com/mate-h/galley/generate) to start a manual. The specimen is at [galley-rosy.vercel.app](https://galley-rosy.vercel.app).
 
 ## What the page does
 

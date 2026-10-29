@@ -18,11 +18,12 @@ function dress(html) {
   let page = html.includes('id="theme-plate"')
     ? html
     : html.replace('<head>', `<head>${themePlate}`)
+  // The index JSON contains paths like site/src/main.js, so the marker has to be the tag.
+  const script = '<script type="module" src="/src/main.js"></script>'
+  if (!page.includes('src="/src/main.js"')) page = page.replace('</body>', `${script}</body>`)
   const index = JSON.stringify(publishIndex(page, repoRoot)).replaceAll('<', '\\u003c')
   const map = `<script type="application/json" id="code-ref-index">${index}</script>`
-  if (!page.includes('id="code-ref-index"')) page = page.replace('</body>', `${map}</body>`)
-  const script = '<script type="module" src="/src/main.js"></script>'
-  if (!page.includes('/src/main.js')) page = page.replace('</body>', `${script}</body>`)
+  if (!page.includes('id="code-ref-index"')) page = page.replace('</head>', `${map}</head>`)
   return page
 }
 

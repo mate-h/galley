@@ -9,7 +9,7 @@
   kicker: "Galley",
   title: "Specimen",
   deck: [Typst, set as a page you can read, hover, and follow into the source.],
-  author: "Galley",
+  author: "Your name",
   description: "A Typst specimen: live page, equation inspector, and source links.",
 )
 
